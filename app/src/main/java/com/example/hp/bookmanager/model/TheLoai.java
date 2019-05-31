@@ -1,23 +1,27 @@
 package com.example.hp.bookmanager.model;
 
-public class Theloai {
-    private int cateID;
+public class TheLoai {
+    private String cateID;
     private String cateName;
     private String location;
-    private String desciption;
+    private String description;
 
-    public Theloai(int cateID, String cateName, String location, String desciption) {
+    public TheLoai(){
+
+    }
+
+    public TheLoai(String cateID, String cateName, String location, String desciption) {
         this.cateID = cateID;
         this.cateName = cateName;
         this.location = location;
-        this.desciption = desciption;
+        this.description = desciption;
     }
 
-    public int getCateID() {
+    public String getCateID() {
         return cateID;
     }
 
-    public void setCateID(int cateID) {
+    public void setCateID(String cateID) {
         this.cateID = cateID;
     }
 
@@ -37,12 +41,12 @@ public class Theloai {
         this.location = location;
     }
 
-    public String getDesciption() {
-        return desciption;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesciption(String desciption) {
-        this.desciption = desciption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override

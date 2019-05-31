@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         imgTheLoai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,TheLoaiActivity.class));
+                startActivity(new Intent(MainActivity.this,ListTheLoaiActivity.class));
             }
         });
 
@@ -52,10 +52,23 @@ public class MainActivity extends AppCompatActivity {
         imgHoaDon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,HoaDon.class));
+                startActivity(new Intent(MainActivity.this,HoaDonActivity.class));
             }
         });
 
+        imgSachBan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,SachBanChayActivity.class));
+            }
+        });
+
+        imgThongKe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ThongKeActivity.class));
+            }
+        });
 
     }
 

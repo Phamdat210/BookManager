@@ -50,13 +50,14 @@ public class NguoiDungDAO {
         List<NguoiDung> ls = new ArrayList<NguoiDung>();
         Cursor cursor = db.query(TABLE_NAME, null,null,null,null,null,null);
         cursor.moveToFirst();
-        if (cursor.isAfterLast()==false){
+        while (cursor.isAfterLast()==false){
             NguoiDung nguoiDung = new NguoiDung();
             nguoiDung.setUsername(cursor.getString(0));
             nguoiDung.setPassword(cursor.getString(1));
             nguoiDung.setPhone(cursor.getString(2));
             nguoiDung.setFullname(cursor.getString(3));
             ls.add(nguoiDung);
+            cursor.moveToNext();
         }
         cursor.close();
         return ls;

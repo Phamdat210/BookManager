@@ -14,21 +14,25 @@
         android:src="@drawable/logo"/>
 
     <EditText
+        android:id="@+id/edCateID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mã thể loại"/>
 
     <EditText
+        android:id="@+id/edCateName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Tên thể loại" />
 
     <EditText
+        android:id="@+id/edLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Vị trí" />
 
     <EditText
+        android:id="@+id/edDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mô tả" />
@@ -39,6 +43,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:onClick="addCate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

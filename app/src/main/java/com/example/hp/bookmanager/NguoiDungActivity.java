@@ -49,6 +49,7 @@ public class NguoiDungActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Thêm thành công",Toast.LENGTH_LONG).show();
             Intent intent = new Intent(NguoiDungActivity.this,ListNguoiDungActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(getApplicationContext(),"Thêm thất bại",Toast.LENGTH_LONG).show();
         }
