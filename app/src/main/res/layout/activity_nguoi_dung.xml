@@ -63,6 +63,14 @@
             android:text="Lưu"/>
 
         <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="userUpdate"
+            android:text="Cập nhật"/>
+
+        <Button
             android:id="@+id/btnHuy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

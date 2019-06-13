@@ -8,8 +8,10 @@
     tools:context=".SachActivity">
 
     <EditText
+        android:id="@+id/edBookID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="text"
         android:hint="Mã sách"/>
 
     <LinearLayout
@@ -18,39 +20,46 @@
         android:orientation="horizontal">
 
         <Spinner
-            android:layout_width="280dp"
-            android:layout_height="48dp"></Spinner>
-
-        <ImageView
-            android:layout_width="48dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:src="@drawable/add"/>
+            android:id="@+id/spTheLoai"></Spinner>
+
 
     </LinearLayout>
 
     <EditText
+        android:id="@+id/edBookName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="text"
         android:hint="Tên sách"/>
 
     <EditText
+        android:id="@+id/edAuthor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="text"
         android:hint="Tác giả"/>
 
     <EditText
+        android:id="@+id/edProducer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="text"
         android:hint="Nhà xuất bản"/>
 
     <EditText
+        android:id="@+id/edPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:hint="Giá bìa"/>
 
     <EditText
+        android:id="@+id/edNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:hint="Số lượng"/>
 
     <LinearLayout
@@ -62,7 +71,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="addBook"
             android:text="Lưu"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="updateBook"
+            android:text="Cập nhật"/>
 
         <Button
             android:layout_width="wrap_content"

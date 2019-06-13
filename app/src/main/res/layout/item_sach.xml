@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/imgIcon"
@@ -13,22 +11,22 @@
         android:layout_marginRight="10dp"/>
 
     <TextView
-        android:id="@+id/tvCateID"
+        android:id="@+id/tvBookName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imgIcon"
         android:text="Tên" />
 
     <TextView
-        android:id="@+id/tvCateName"
+        android:id="@+id/tvNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imgIcon"
-        android:layout_below="@+id/tvCateID"
+        android:layout_below="@+id/tvBookName"
         android:text="Số điện thoại" />
 
     <ImageView
-        android:id="@+id/imgDeleteCate"
+        android:id="@+id/imgDeleteBook"
         android:layout_width="48dp"
         android:layout_height="50dp"
         android:layout_alignParentRight="true"

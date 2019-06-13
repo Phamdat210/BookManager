@@ -8,19 +8,24 @@
     tools:context=".LoginActivity">
 
     <ImageView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50px"
         android:src="@drawable/logo"/>
     
     <EditText
+        android:id="@+id/edUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="text"
         android:hint="Tài khoản"/>
 
     <EditText
+        android:id="@+id/edPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:hint="Mật khẩu" />
 
     <CheckBox
@@ -34,6 +39,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:onClick="checkLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

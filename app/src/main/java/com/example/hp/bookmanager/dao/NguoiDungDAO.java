@@ -62,4 +62,39 @@ public class NguoiDungDAO {
         cursor.close();
         return ls;
     }
+    public int deleteNguoiDung(String username){
+        int result =  db.delete(TABLE_NAME,"username=?",new String[]{username});
+        if (result == 0){
+            return -1;
+        }
+        return 1;
+    }
+
+    public int updateNguoiDung(NguoiDung nguoiDung){
+        ContentValues values = new ContentValues();
+        values.put("username",nguoiDung.getUsername());
+        values.put("password",nguoiDung.getPassword());
+        values.put("phone",nguoiDung.getPhone());
+        values.put("fullname",nguoiDung.getFullname());
+
+        try{
+            if (db.update(TABLE_NAME,values,"username=?",new String[]{nguoiDung.getUsername()})<0){
+                return -1;
+            }
+        }catch (Exception ex){
+            Log.e("NguoiDungDAO",ex.getMessage());
+        }
+
+        return 1;
+    }
+
+    public int checkLogin(String usern,String passw){
+        Cursor cursor= db.query(TABLE_NAME,null,"username=? and password=?",
+                new String[]{usern,passw},null,null,null);
+        int i= cursor.getCount();
+        if (i==1){
+            return 1;//login successful
+        }
+        return -1;//login failed
+    }
 }

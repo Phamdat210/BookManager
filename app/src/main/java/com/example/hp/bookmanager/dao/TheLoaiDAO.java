@@ -19,13 +19,17 @@ public class TheLoaiDAO {
             " cateID text primary key, "+
             " cateName text, "+
             " location text, "+
-            " description text, "+
+            " description text "+
     ");";
 
     public static final String TABLE_NAME = "TheLoai";
     public TheLoaiDAO(Context context){
         dbHelper = new DatabaseHelper(context);
         db = dbHelper.getWritableDatabase();
+    }
+
+    public TheLoaiDAO(){
+
     }
 
     public int insertTheLoai(TheLoai theLoai){
@@ -60,6 +64,44 @@ public class TheLoaiDAO {
         }
         cursor.close();
         return ls;
+    }
+
+    public List<String> getAllMaTheLoai(){
+        List<String> ls = new ArrayList<String>();
+        Cursor cursor = db.query(TABLE_NAME,null,null,null,null,null,null);
+        cursor.moveToFirst();
+        while (cursor.isAfterLast()==false){
+            ls.add(cursor.getString(1));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return ls;
+    }
+
+    public int delTheLoai(String cateid){
+        int result = db.delete(TABLE_NAME, "cateID=?",new String[]{cateid} );
+        if (result == 0){
+            return -1;
+        }
+        return 1;
+    }
+
+    public int updateTheLoai(TheLoai theLoai){
+        ContentValues values = new ContentValues();
+        values.put("cateID",theLoai.getCateID());
+        values.put("cateName",theLoai.getCateName());
+        values.put("location",theLoai.getLocation());
+        values.put("description",theLoai.getDescription());
+
+        try{
+            if (db.update(TABLE_NAME,values,"cateID=?",new String[]{theLoai.getCateID()})<0){
+                return -1;
+            }
+        }catch (Exception ex){
+            Log.e("TheLoaiDAO",ex.getMessage());
+        }
+
+        return 1;
     }
 
 }

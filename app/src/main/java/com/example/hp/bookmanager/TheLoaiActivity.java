@@ -26,6 +26,20 @@ public class TheLoaiActivity extends AppCompatActivity {
         edCateName = (EditText) findViewById(R.id.edCateName);
         edLocation = (EditText) findViewById(R.id.edLocation);
         edDescription = (EditText) findViewById(R.id.edDescription);
+
+        try {
+            Intent intent = getIntent();
+            if (intent != null) {
+                Bundle bundle = intent.getBundleExtra("bundle");
+                edCateID.setText(bundle.getString("id"));
+                edCateName.setText(bundle.getString("name"));
+                edLocation.setText(bundle.getString("location"));
+                edDescription.setText(bundle.getString("description"));
+            }
+        } catch (Exception ex){
+
+        }
+
     }
 
     public void addCate(View view) {
@@ -41,6 +55,22 @@ public class TheLoaiActivity extends AppCompatActivity {
             finish();
         } else {
             Toast.makeText(TheLoaiActivity.this,"Thêm thất bại",Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void cateUpdate(View view) {
+        theLoaiDAO = new TheLoaiDAO(TheLoaiActivity.this);
+        TheLoai theLoai = new TheLoai(edCateID.getText().toString(),
+                edCateName.getText().toString(),
+                edLocation.getText().toString(),
+                edDescription.getText().toString());
+        if (theLoaiDAO.updateTheLoai(theLoai)==1){
+            Toast.makeText(getApplicationContext(),"Cập nhật thành công",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(TheLoaiActivity.this,ListTheLoaiActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(getApplicationContext(),"Cập nhật thất bại",Toast.LENGTH_LONG).show();
         }
     }
 }

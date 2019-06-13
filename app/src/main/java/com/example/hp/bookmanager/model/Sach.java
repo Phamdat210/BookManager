@@ -1,17 +1,21 @@
 package com.example.hp.bookmanager.model;
 
 public class Sach {
-    private int bookID;
-    private int cateID;
+    private String bookID;
+//    private String cateID;
     private String bookName;
     private String author;
     private String producer;
-    private int price;
-    private int number;
+    private String price;
+    private String number;
 
-    public Sach(int bookID, int cateID, String bookName, String author, String producer, int price, int number) {
+    public Sach(){
+
+    }
+
+    public Sach(String bookID, String bookName, String author, String producer, String price, String number) {
         this.bookID = bookID;
-        this.cateID = cateID;
+//        this.cateID = cateID;
         this.bookName = bookName;
         this.author = author;
         this.producer = producer;
@@ -19,21 +23,21 @@ public class Sach {
         this.number = number;
     }
 
-    public int getBookID() {
+    public String getBookID() {
         return bookID;
     }
 
-    public void setBookID(int bookID) {
+    public void setBookID(String bookID) {
         this.bookID = bookID;
     }
 
-    public int getCateID() {
-        return cateID;
-    }
-
-    public void setCateID(int cateID) {
-        this.cateID = cateID;
-    }
+//    public String getCateID() {
+//        return cateID;
+//    }
+//
+//    public void setCateID(String cateID) {
+//        this.cateID = cateID;
+//    }
 
     public String getBookName() {
         return bookName;
@@ -59,19 +63,19 @@ public class Sach {
         this.producer = producer;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 }

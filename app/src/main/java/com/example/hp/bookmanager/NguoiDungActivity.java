@@ -37,6 +37,19 @@ public class NguoiDungActivity extends AppCompatActivity {
         btnLuu = (Button) findViewById(R.id.btnLuu);
         btnHuy = (Button) findViewById(R.id.btnHuy);
         btnListNguoiDung = (Button) findViewById(R.id.btnListNguoiDung);
+
+        try {
+            Intent intent = getIntent();
+            if (intent != null) {
+                Bundle bundle = intent.getBundleExtra("bundle");
+                edUser.setText(bundle.getString("userName"));
+                edPass.setText(bundle.getString("password"));
+                edPhone.setText(bundle.getString("phone"));
+                edFullName.setText(bundle.getString("fullname"));
+            }
+        } catch (Exception ex){
+
+        }
     }
 
     public void addUser(View view) {
@@ -52,6 +65,22 @@ public class NguoiDungActivity extends AppCompatActivity {
             finish();
         } else {
             Toast.makeText(getApplicationContext(),"Thêm thất bại",Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void userUpdate(View view) {
+        nguoiDungDAO = new NguoiDungDAO(NguoiDungActivity.this);
+        NguoiDung nguoiDung = new NguoiDung(edUser.getText().toString(),
+                edPass.getText().toString(),
+                edPhone.getText().toString(),
+                edFullName.getText().toString());
+        if (nguoiDungDAO.updateNguoiDung(nguoiDung)==1){
+            Toast.makeText(getApplicationContext(),"Cập nhật thành công",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(NguoiDungActivity.this,ListNguoiDungActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(getApplicationContext(),"Cập nhật thất bại",Toast.LENGTH_LONG).show();
         }
     }
 }
