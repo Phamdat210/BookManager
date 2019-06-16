@@ -20,7 +20,6 @@ public class ListNguoiDungActivity extends AppCompatActivity {
     public static List<NguoiDung> dsNguoiDung = new ArrayList<>();
 //    ListView lvNguoiDung;
     NguoiDungDAO nguoiDungDAO;
-    NguoiDungAdapter adapter=null;
     RecyclerView recyclerView;
     NguoiDungAdapterRecycler adapterRecycler;
 

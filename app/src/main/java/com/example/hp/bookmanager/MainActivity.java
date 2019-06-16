@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         imgHoaDon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,HoaDonActivity.class));
+                startActivity(new Intent(MainActivity.this,ListHoaDonActivity.class));
             }
         });
 

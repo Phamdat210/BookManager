@@ -29,7 +29,7 @@ public class SachActivity extends AppCompatActivity implements AdapterView.OnIte
     private EditText edPrice;
     private EditText edNumber;
     SachDAO sachDAO;
-
+    TheLoaiDAO theLoaiDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,6 @@ public class SachActivity extends AppCompatActivity implements AdapterView.OnIte
             if (intent != null) {
                 Bundle bundle = intent.getBundleExtra("bundle");
                 edBookID.setText(bundle.getString("bookID"));
-//                spinner.setOnItemClickListener((AdapterView.OnItemClickListener) bundle.get("cateID"));
                 edBookName.setText(bundle.getString("bookName"));
                 edAuthor.setText(bundle.getString("author"));
                 edProducer.setText(bundle.getString("producer"));
@@ -60,10 +59,8 @@ public class SachActivity extends AppCompatActivity implements AdapterView.OnIte
 
         }
 
-
         TheLoaiDAO theLoaiDAO = new TheLoaiDAO(getApplicationContext());
         list = theLoaiDAO.getAllMaTheLoai();
-
         spinner.setOnItemSelectedListener(this);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,list);
@@ -83,7 +80,6 @@ public class SachActivity extends AppCompatActivity implements AdapterView.OnIte
     public void addBook(View view) {
         sachDAO = new SachDAO(SachActivity.this);
         Sach sach = new Sach(edBookID.getText().toString(),
-//                spinner.getAdapter().toString(),
                 edBookName.getText().toString(),
                 edAuthor.getText().toString(),
                 edProducer.getText().toString(),

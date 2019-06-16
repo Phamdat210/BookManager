@@ -30,7 +30,7 @@
         <activity
             android:name=".HoaDonActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".HoaDonChiTietActivity" />
+        <activity android:name=".ListHoaDonActivity" />
         <activity
             android:name=".ListTheLoaiActivity"
             android:parentActivityName=".MainActivity" />
@@ -40,7 +40,7 @@
         <activity android:name=".ListSachActivity" />
         <activity android:name=".ThongKeActivity" />
         <activity android:name=".SachBanChayActivity" />
-        <activity android:name=".adapter.NguoiDungAdapterRecycler"></activity>
+        <!--<activity android:name=".adapter.NguoiDungAdapterRecycler"></activity>-->
     </application>
 
 </manifest>

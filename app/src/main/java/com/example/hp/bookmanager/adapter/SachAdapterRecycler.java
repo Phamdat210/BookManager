@@ -30,19 +30,18 @@ public class SachAdapterRecycler extends RecyclerView.Adapter<SachAdapterRecycle
         this.context = context;
         this.arrSach = arrSach;
         this.inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        sachDAO = new SachDAO(context);
     }
 
     @NonNull
     @Override
     public SachViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup,final int i) {
-        View view1 = inflater.inflate(R.layout.item_nguoi_dung,null);
+        View view1 = inflater.inflate(R.layout.item_sach,null);
         SachViewHolder view = new SachViewHolder(view1);
         view.imgIcon = view1.findViewById(R.id.imgIcon);
         view.tvBookName = view1.findViewById(R.id.tvBookName);
         view.tvNumber = view1.findViewById(R.id.tvNumber);
-        view.imgDelete = view1.findViewById(R.id.imgDeleteBook);
-        view.imgDelete.setOnClickListener(new View.OnClickListener() {
+        view.imgDeleteBook = view1.findViewById(R.id.imgDeleteBook);
+        view.imgDeleteBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sachDAO.deleteSach(arrSach.get(i).getBookID());
@@ -85,7 +84,7 @@ public class SachAdapterRecycler extends RecyclerView.Adapter<SachAdapterRecycle
     }
 
     public class SachViewHolder extends RecyclerView.ViewHolder{
-        public ImageView imgIcon, imgDelete;
+        public ImageView imgIcon, imgDeleteBook;
         public TextView tvBookName, tvNumber;
 
         public SachViewHolder( View itemView) {
@@ -93,7 +92,7 @@ public class SachAdapterRecycler extends RecyclerView.Adapter<SachAdapterRecycle
             imgIcon = itemView.findViewById(R.id.imgIcon);
             tvBookName = itemView.findViewById(R.id.tvBookName);
             tvNumber = itemView.findViewById(R.id.tvNumber);
-            imgDelete = itemView.findViewById(R.id.imgDeleteBook);
+            imgDeleteBook = itemView.findViewById(R.id.imgDeleteBook);
         }
     }
 }

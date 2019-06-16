@@ -5,9 +5,11 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.hp.bookmanager.dao.HoaDonDAO;
 import com.example.hp.bookmanager.dao.NguoiDungDAO;
 import com.example.hp.bookmanager.dao.SachDAO;
 import com.example.hp.bookmanager.dao.TheLoaiDAO;
+import com.example.hp.bookmanager.model.HoaDon;
 import com.example.hp.bookmanager.model.NguoiDung;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -24,6 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(NguoiDungDAO.SQL_NGUOI_DUNG);
         db.execSQL(TheLoaiDAO.SQL_THE_LOAI);
         db.execSQL(SachDAO.SQL_SACH);
+        db.execSQL(HoaDonDAO.SQL_HOA_DON);
     }
 
     @Override
@@ -31,5 +34,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + NguoiDungDAO.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + TheLoaiDAO.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + SachDAO.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + HoaDonDAO.TABLE_NAME);
     }
 }

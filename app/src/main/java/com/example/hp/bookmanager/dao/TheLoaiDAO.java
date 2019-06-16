@@ -71,6 +71,7 @@ public class TheLoaiDAO {
         Cursor cursor = db.query(TABLE_NAME,null,null,null,null,null,null);
         cursor.moveToFirst();
         while (cursor.isAfterLast()==false){
+            ls.add(cursor.getString(0));
             ls.add(cursor.getString(1));
             cursor.moveToNext();
         }
